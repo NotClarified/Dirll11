@@ -1,13 +1,10 @@
 from pico2d import open_canvas, delay, close_canvas
-import play_mode
+# import logo_mode as start_mode
+import game_framework
+#import play_mode as start_mode
+import title_mode as start_mode # title_mode를 import하되 start_mode로 취급하라
+
 
 open_canvas()
-play_mode.init()
-while play_mode.running:
-    play_mode.handle_events()
-    play_mode.update()
-    play_mode.draw()
-    play_mode.draw()
-    delay(0.01)
-play_mode.finish()
+game_framework.run(start_mode)
 close_canvas()
